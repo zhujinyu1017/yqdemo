@@ -1,0 +1,72 @@
+/**
+ * Created by zhujinyu on 2018/2/6.
+ */
+* {
+  box-sizing: border-box;
+}
+
+html ,body{
+  font-size: 20px;
+  font-family: sans-serif !important;
+  /*font-size: 62.5% !important;*/
+  -webkit-text-size-adjust: 100%;
+  /*height: auto!important;*/
+  height: 100%!important;
+  position: relative!important;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 320px) {
+  html {
+    font-size: 17.06666666666667px !important;
+  }
+}
+@media only screen and (min-width: 375px) {
+  html {
+    font-size: 20px !important;
+  }
+}
+@media only screen and (min-width: 400px) {
+  html {
+    font-size: 21.33333333px !important;
+  }
+}
+@media only screen and (min-width: 414px) {
+  html {
+    font-size: 22.08px !important;
+  }
+}
+@media only screen and (min-width: 480px) {
+  html {
+    font-size: 25.6px !important;
+  }
+}
+/*布局*/
+.mt0{
+  margin-top: 0;
+}
+.mt10{
+  margin-top: .5rem;
+}
+.flex-box{
+  display: -webkit-box;
+  display: flex;
+}
+.flex-box-1{
+  -webkit-flex: 1;
+  flex: 1;
+}
+.page-group{
+ width: 100%;
+}
+/*文字*/
+.txt-l{
+  text-align: left;
+}
+.txt-r{
+  text-align: right;
+}
+.txt-c{
+  text-align: center;
+}
