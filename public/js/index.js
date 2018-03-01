@@ -1,5 +1,257 @@
 $(function () {
     'use strict';
+    /*加载模板数据*/
+    var data = {
+        banner:[
+            {
+                img_url:'./public/img/a1.jpg',
+                url:''
+            },
+            {
+                img_url:'./public/img/a2.jpg',
+                url:''
+            },
+            {
+                img_url:'./public/img/a3.jpg',
+                url:''
+            },
+            {
+                img_url:'./public/img/a4.jpg',
+                url:''
+            },
+            {
+                img_url:'./public/img/a5.jpg',
+                url:''
+            }
+        ],
+        name: 'Fxtpl模板引擎',
+        list1: [
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'3'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'2'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+        ],
+        list2: [
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'3'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'2'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+        ],
+        list3: [
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'3'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'2'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+        ]
+    };
+    addItem("#banner",data,".swiper-wrapper");
+    addItem("#list1",data,"#demo1");
+    addItem("#list2",data,"#demo2");
+    addItem("#list3",data,"#demo3");
       //多个标签页下的无限滚动
     $(document).on("pageInit", "#page-fixed-tab-infinite-scroll", function(e, id, page) {
         var loading = false;
@@ -40,188 +292,224 @@ $(function () {
                 list1: [
                     {
                         img_url:"./public/img/a1.jpg",
-                        title:'标题一',
-                        sub_title:'子标题一'
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
                         img_url:"./public/img/a1.jpg",
-                        title:'标题一',
-                        sub_title:'子标题一'
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'3'
                     },
                     {
                         img_url:"./public/img/a1.jpg",
-                        title:'标题一',
-                        sub_title:'子标题一'
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'2'
                     },
                     {
                         img_url:"./public/img/a1.jpg",
-                        title:'标题一',
-                        sub_title:'子标题一'
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
                         img_url:"./public/img/a1.jpg",
-                        title:'标题一',
-                        sub_title:'子标题一'
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
                         img_url:"./public/img/a1.jpg",
-                        title:'标题一',
-                        sub_title:'子标题一'
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
                         img_url:"./public/img/a1.jpg",
-                        title:'标题一',
-                        sub_title:'子标题一'
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
                         img_url:"./public/img/a1.jpg",
-                        title:'标题一',
-                        sub_title:'子标题一'
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
                         img_url:"./public/img/a1.jpg",
-                        title:'标题一',
-                        sub_title:'子标题一'
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
                         img_url:"./public/img/a1.jpg",
-                        title:'标题一',
-                        sub_title:'子标题一'
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
                         img_url:"./public/img/a1.jpg",
-                        title:'标题一',
-                        sub_title:'子标题一'
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
                         img_url:"./public/img/a1.jpg",
-                        title:'标题一',
-                        sub_title:'子标题一'
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                 ],
                 list2: [
                     {
-                        img_url:"./public/img/a2.jpg",
-                        title:'标题二',
-                        sub_title:'子标题二'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'李家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
-                        img_url:"./public/img/a2.jpg",
-                        title:'标题二',
-                        sub_title:'子标题二'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'3'
                     },
                     {
-                        img_url:"./public/img/a2.jpg",
-                        title:'标题二',
-                        sub_title:'子标题二'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'2'
                     },
                     {
-                        img_url:"./public/img/a2.jpg",
-                        title:'标题二',
-                        sub_title:'子标题二'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
-                        img_url:"./public/img/a2.jpg",
-                        title:'标题二',
-                        sub_title:'子标题二'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
-                        img_url:"./public/img/a2.jpg",
-                        title:'标题二',
-                        sub_title:'子标题二'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
-                        img_url:"./public/img/a2.jpg",
-                        title:'标题二',
-                        sub_title:'子标题二'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
-                        img_url:"./public/img/a2.jpg",
-                        title:'标题二',
-                        sub_title:'子标题二'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
-                        img_url:"./public/img/a2.jpg",
-                        title:'标题二',
-                        sub_title:'子标题二'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
-                        img_url:"./public/img/a2.jpg",
-                        title:'标题二',
-                        sub_title:'子标题二'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
-                        img_url:"./public/img/a2.jpg",
-                        title:'标题二',
-                        sub_title:'子标题二'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
-                        img_url:"./public/img/a2.jpg",
-                        title:'标题二',
-                        sub_title:'子标题二'
-                    }
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
+                    },
                 ],
                 list3: [
                     {
-                        img_url:"./public/img/a3.jpg",
-                        title:'标题三',
-                        sub_title:'子标题三'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'王家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
-                        img_url:"./public/img/a3.jpg",
-                        title:'标题三',
-                        sub_title:'子标题三'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'3'
                     },
                     {
-                        img_url:"./public/img/a3.jpg",
-                        title:'标题三',
-                        sub_title:'子标题三'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'2'
                     },
                     {
-                        img_url:"./public/img/a3.jpg",
-                        title:'标题三',
-                        sub_title:'子标题三'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
-                        img_url:"./public/img/a3.jpg",
-                        title:'标题三',
-                        sub_title:'子标题三'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
-                        img_url:"./public/img/a3.jpg",
-                        title:'标题三',
-                        sub_title:'子标题三'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
-                        img_url:"./public/img/a3.jpg",
-                        title:'标题三',
-                        sub_title:'子标题三'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
-                        img_url:"./public/img/a3.jpg",
-                        title:'标题三',
-                        sub_title:'子标题三'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
-                        img_url:"./public/img/a3.jpg",
-                        title:'标题三',
-                        sub_title:'子标题三'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
-                        img_url:"./public/img/a3.jpg",
-                        title:'标题三',
-                        sub_title:'子标题三'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
-                        img_url:"./public/img/a3.jpg",
-                        title:'标题三',
-                        sub_title:'子标题三'
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
                     },
                     {
-                        img_url:"./public/img/a3.jpg",
-                        title:'标题三',
-                        sub_title:'子标题三'
-                    }
+                        img_url:"./public/img/a1.jpg",
+                        site_name:'张家口加气站',
+                        distance:1532,
+                        evaluation:'5'
+                    },
                 ]
             };
             // 模拟1s的加载过程
@@ -243,6 +531,258 @@ $(function () {
             time++;
         });
     });
-    $(document).on("pageInit", "#page-index", function(e, pageId, $page) {});
     $.init();
+    /*跳转到地图*/
+    var data = {
+        banner:[
+            {
+                img_url:'./public/img/a1.jpg',
+                url:''
+            },
+            {
+                img_url:'./public/img/a2.jpg',
+                url:''
+            },
+            {
+                img_url:'./public/img/a3.jpg',
+                url:''
+            },
+            {
+                img_url:'./public/img/a4.jpg',
+                url:''
+            },
+            {
+                img_url:'./public/img/a5.jpg',
+                url:''
+            }
+        ],
+        name: 'Fxtpl模板引擎',
+        list1: [
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'3'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'2'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+        ],
+        list2: [
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'3'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'2'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+        ],
+        list3: [
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'3'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'2'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+            {
+                img_url:"./public/img/a1.jpg",
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
+            },
+        ]
+    };
+    addItem("#banner",data,".swiper-wrapper");
+    addItem("#list1",data,"#demo1");
+    addItem("#list2",data,"#demo2");
+    addItem("#list3",data,"#demo3");
 });
+

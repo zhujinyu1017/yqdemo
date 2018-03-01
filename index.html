@@ -20,7 +20,7 @@
     <script type='text/javascript' src='./public/js/lib/mustache/mustache.min.js' charset='utf-8'></script>
     <script type='text/javascript' src='./public/js/base.js' charset='utf-8'></script>
 </head>
-<body>
+<body onload="initGaode()">
 <div class="page-group">
     <div class="page page-current" id="page-fixed-tab-infinite-scroll">
         <div class="content" data-type="">
@@ -86,6 +86,8 @@
         <div id="pop"><a href="/demo/index2.html" class="item-link">跳</a></div>
     </div>
 </div>
+<div id="mapContainer" style="display: none;"></div>
+<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=c8d499635271ab4f9d449d35911e2cf1&plugin=AMap.ToolBar"></script>
 <script type='text/javascript' src='./public/js/index.js' charset='utf-8'></script>
 <script id="banner" type="x-tmpl-mustache">
 {{#banner}}
@@ -106,16 +108,14 @@
                 <div class="site-name">{{site_name}}</div>
                 <div class="distance">{{distance}}km</div>
                 <div class="evaluation" data-evaluation="{{evaluation}}">
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
-                    <span>★</span>
+                   {{#star}}
+                        <span>{{.}}</span>
+                   {{/star}}
                 </div>
             </div>
         </div>
         <div class="item-subtitle">
-            <div class="navigation button  button-round button-fill button-danger">导航</div>
+            <div class="navigation button  button-round button-fill button-danger" data-end="116.427281, 39.903719">导航</div>
         </div>
     </div>
 </li>
@@ -128,10 +128,20 @@
         <img src="{{img_url}}" width="44">
     </div>
     <div class="item-inner">
-        <div class="item-title-row">
-            <div class="item-title">{{title}}</div>
+        <div class = "item-title-row">
+            <div class="item-title">
+                <div class="site-name">{{site_name}}</div>
+                <div class="distance">{{distance}}km</div>
+                <div class="evaluation" data-evaluation="{{evaluation}}">
+                   {{#star}}
+                        <span>{{.}}</span>
+                   {{/star}}
+                </div>
+            </div>
         </div>
-        <div class="item-subtitle">{{sub_title}}</div>
+        <div class="item-subtitle">
+            <div class="navigation button  button-round button-fill button-danger">导航</div>
+        </div>
     </div>
 </li>
 {{/list2}}
@@ -143,242 +153,23 @@
         <img src="{{img_url}}" width="44">
     </div>
     <div class="item-inner">
-        <div class="item-title-row">
-            <div class="item-title">{{title}}</div>
+        <div class = "item-title-row">
+            <div class="item-title">
+                <div class="site-name">{{site_name}}</div>
+                <div class="distance">{{distance}}km</div>
+                <div class="evaluation" data-evaluation="{{evaluation}}">
+                   {{#star}}
+                        <span>{{.}}</span>
+                   {{/star}}
+                </div>
+            </div>
         </div>
-        <div class="item-subtitle">{{sub_title}}</div>
+        <div class="item-subtitle">
+            <div class="navigation button  button-round button-fill button-danger">导航</div>
+        </div>
     </div>
 </li>
 {{/list3}}
-</script>
-<script>
-    var data = {
-        banner:[
-            {
-                img_url:'./public/img/a1.jpg',
-                url:''
-            },
-            {
-                img_url:'./public/img/a2.jpg',
-                url:''
-            },
-            {
-                img_url:'./public/img/a3.jpg',
-                url:''
-            },
-            {
-                img_url:'./public/img/a4.jpg',
-                url:''
-            },
-            {
-                img_url:'./public/img/a5.jpg',
-                url:''
-            }
-        ],
-        name: 'Fxtpl模板引擎',
-        list1: [
-            {
-                img_url:"./public/img/a1.jpg",
-                site_name:'张家口加气站',
-                distance:1532,
-                evaluation:'5'
-            },
-            {
-                img_url:"./public/img/a1.jpg",
-                site_name:'张家口加气站',
-                distance:1532,
-                evaluation:'5'
-            },
-            {
-                img_url:"./public/img/a1.jpg",
-                site_name:'张家口加气站',
-                distance:1532,
-                evaluation:'5'
-            },
-            {
-                img_url:"./public/img/a1.jpg",
-                site_name:'张家口加气站',
-                distance:1532,
-                evaluation:'5'
-            },
-            {
-                img_url:"./public/img/a1.jpg",
-                site_name:'张家口加气站',
-                distance:1532,
-                evaluation:'5'
-            },
-            {
-                img_url:"./public/img/a1.jpg",
-                site_name:'张家口加气站',
-                distance:1532,
-                evaluation:'5'
-            },
-            {
-                img_url:"./public/img/a1.jpg",
-                site_name:'张家口加气站',
-                distance:1532,
-                evaluation:'5'
-            },
-            {
-                img_url:"./public/img/a1.jpg",
-                site_name:'张家口加气站',
-                distance:1532,
-                evaluation:'5'
-            },
-            {
-                img_url:"./public/img/a1.jpg",
-                site_name:'张家口加气站',
-                distance:1532,
-                evaluation:'5'
-            },
-            {
-                img_url:"./public/img/a1.jpg",
-                site_name:'张家口加气站',
-                distance:1532,
-                evaluation:'5'
-            },
-            {
-                img_url:"./public/img/a1.jpg",
-                site_name:'张家口加气站',
-                distance:1532,
-                evaluation:'5'
-            },
-            {
-                img_url:"./public/img/a1.jpg",
-                site_name:'张家口加气站',
-                distance:1532,
-                evaluation:'5'
-            },
-        ],
-        list2: [
-            {
-                img_url:"./public/img/a2.jpg",
-                title:'标题二',
-                sub_title:'子标题二'
-            },
-            {
-                img_url:"./public/img/a2.jpg",
-                title:'标题二',
-                sub_title:'子标题二'
-            },
-            {
-                img_url:"./public/img/a2.jpg",
-                title:'标题二',
-                sub_title:'子标题二'
-            },
-            {
-                img_url:"./public/img/a2.jpg",
-                title:'标题二',
-                sub_title:'子标题二'
-            },
-            {
-                img_url:"./public/img/a2.jpg",
-                title:'标题二',
-                sub_title:'子标题二'
-            },
-            {
-                img_url:"./public/img/a2.jpg",
-                title:'标题二',
-                sub_title:'子标题二'
-            },
-            {
-                img_url:"./public/img/a2.jpg",
-                title:'标题二',
-                sub_title:'子标题二'
-            },
-            {
-                img_url:"./public/img/a2.jpg",
-                title:'标题二',
-                sub_title:'子标题二'
-            },
-            {
-                img_url:"./public/img/a2.jpg",
-                title:'标题二',
-                sub_title:'子标题二'
-            },
-            {
-                img_url:"./public/img/a2.jpg",
-                title:'标题二',
-                sub_title:'子标题二'
-            },
-            {
-                img_url:"./public/img/a2.jpg",
-                title:'标题二',
-                sub_title:'子标题二'
-            },
-            {
-                img_url:"./public/img/a2.jpg",
-                title:'标题二',
-                sub_title:'子标题二'
-            }
-        ],
-        list3: [
-            {
-                img_url:"./public/img/a3.jpg",
-                title:'标题三',
-                sub_title:'子标题三'
-            },
-            {
-                img_url:"./public/img/a3.jpg",
-                title:'标题三',
-                sub_title:'子标题三'
-            },
-            {
-                img_url:"./public/img/a3.jpg",
-                title:'标题三',
-                sub_title:'子标题三'
-            },
-            {
-                img_url:"./public/img/a3.jpg",
-                title:'标题三',
-                sub_title:'子标题三'
-            },
-            {
-                img_url:"./public/img/a3.jpg",
-                title:'标题三',
-                sub_title:'子标题三'
-            },
-            {
-                img_url:"./public/img/a3.jpg",
-                title:'标题三',
-                sub_title:'子标题三'
-            },
-            {
-                img_url:"./public/img/a3.jpg",
-                title:'标题三',
-                sub_title:'子标题三'
-            },
-            {
-                img_url:"./public/img/a3.jpg",
-                title:'标题三',
-                sub_title:'子标题三'
-            },
-            {
-                img_url:"./public/img/a3.jpg",
-                title:'标题三',
-                sub_title:'子标题三'
-            },
-            {
-                img_url:"./public/img/a3.jpg",
-                title:'标题三',
-                sub_title:'子标题三'
-            },
-            {
-                img_url:"./public/img/a3.jpg",
-                title:'标题三',
-                sub_title:'子标题三'
-            },
-            {
-                img_url:"./public/img/a3.jpg",
-                title:'标题三',
-                sub_title:'子标题三'
-            }
-        ]
-    };
-    addItem("#banner",data,".swiper-wrapper");
-    addItem("#list1",data,"#demo1");
-    addItem("#list2",data,"#demo2");
-    addItem("#list3",data,"#demo3");
 </script>
 </body>
 </html>

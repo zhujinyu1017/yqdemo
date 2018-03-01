@@ -19,6 +19,9 @@
           justify-content: center;
           font-size: .6rem !important; }
         .content .menu-nav .button .menu-item img {
+          width: 2rem;
+          height: 2rem;
+          margin-right: .5rem;
           vertical-align: center; }
   .content .other-business {
     height: 2.5rem;
@@ -29,13 +32,22 @@
     .content .other-business .other-business-title {
       width: 4rem; }
     .content .other-business .other-business-choice {
+      padding-left: .5rem;
       display: block;
       width: 100%;
       height: 1.5rem;
       line-height: 1.5rem;
       position: relative;
       top: .5rem;
-      border-radius: .5rem; }
+      border-radius: .5rem;
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      background: url("../img/arrow.png") no-repeat scroll 98% center transparent;
+      background-size: auto .6rem;
+      padding-right: 1rem; }
+    .content .other-business .other-business-choice::-ms-expand {
+      display: none; }
   .content .item-content .site-name {
     font-size: .8rem; }
   .content .item-content .distance {
