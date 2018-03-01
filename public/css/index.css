@@ -7,17 +7,42 @@
       height: 10rem; }
     .content .banner .swiper-pagination {
       bottom: 0rem !important; }
-  .content .nav-menu {
-    padding: .5rem; }
-    .content .nav-menu .button {
-      margin: 0 .25rem;
-      height: 2rem;
-      line-height: 2rem; }
-    .content .nav-menu .menu-item {
-      align-items: center;
-      justify-content: center;
-      font-size: .6rem !important; }
-      .content .nav-menu .menu-item img {
-        vertical-align: center; }
+  .content .menu-nav {
+    height: 3rem; }
+    .content .menu-nav .button {
+      height: 100%; }
+      .content .menu-nav .button .menu-item {
+        height: 100%; }
+        .content .menu-nav .button .menu-item .flex-box {
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+          font-size: .6rem !important; }
+        .content .menu-nav .button .menu-item img {
+          vertical-align: center; }
+  .content .other-business {
+    height: 2.5rem;
+    line-height: 2.5rem;
+    background: #fff;
+    font-size: .8rem;
+    padding: 0 .5rem; }
+    .content .other-business .other-business-title {
+      width: 4rem; }
+    .content .other-business .other-business-choice {
+      display: block;
+      width: 100%;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      position: relative;
+      top: .5rem;
+      border-radius: .5rem; }
+  .content .item-content .site-name {
+    font-size: .8rem; }
+  .content .item-content .distance {
+    font-size: .6rem; }
+  .content .item-content .evaluation span {
+    color: #f00; }
+  .content .item-content .navigation {
+    width: 5rem; }
 
 /*# sourceMappingURL=index.css.map */

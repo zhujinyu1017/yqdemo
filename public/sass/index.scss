@@ -10,21 +10,57 @@
       bottom: 0rem !important;
     }
   }
-  .nav-menu{
-    padding: .5rem;
+  .menu-nav{
+    height: 3rem;
     .button{
-      margin: 0 .25rem;
-      height: 2rem;
-      line-height: 2rem;
-    }
-    .menu-item{
-      align-items: center;
-      justify-content: center;
-      font-size: .6rem !important;
-      img{
-        vertical-align: center;
+      height: 100%;
+      .menu-item{
+        height: 100%;
+        .flex-box{
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+          font-size: .6rem !important;
+        }
+        img{
+          vertical-align: center;
+        }
       }
     }
   }
+  .other-business{
+    height: 2.5rem;
+    line-height: 2.5rem;
+    background: #fff;
+    font-size: .8rem;
+    padding: 0 .5rem;
+    .other-business-title{
+      width: 4rem;
+    }
+    .other-business-choice{
+      display: block;
+      width: 100%;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      position: relative;
+      top: .5rem;
+      border-radius: .5rem;
+    }
+  }
+  .item-content{
+    .site-name{
+      font-size: .8rem;
+    }
+    .distance{
+      font-size: .6rem;
+    }
+    .evaluation{
+      span{
+        color: #f00;
+      }
+    }
+    .navigation{
+      width: 5rem;
+    }
+  }
 }
-

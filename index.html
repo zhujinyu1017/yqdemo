@@ -8,14 +8,14 @@
     <link rel="shortcut icon" href="/favicon.ico">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="http://m.sui.taobao.org/dist/css/sm.css">
-    <link rel="stylesheet" href="http://m.sui.taobao.org/dist/css/sm-extend.css">
+    <link rel="stylesheet" href="./public/css/lib/sui/sm.css">
+    <link rel="stylesheet" href="./public/css/lib/sui/sm-extend.css">
     <link rel="stylesheet" href="./public/css/base.css">
     <link rel="stylesheet" href="./public/css/index.css">
     <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
-    <script type='text/javascript' src='http://m.sui.taobao.org/dist/js/sm.js' charset='utf-8'></script>
-    <script type='text/javascript' src='http://m.sui.taobao.org/dist/js/sm-extend.js' charset='utf-8'></script>
-    <script type='text/javascript' src='http://m.sui.taobao.org/dist/js/sm-city-picker.js' charset='utf-8'></script>
+    <script type='text/javascript' src='public/js/lib/sui/sm.js' charset='utf-8'></script>
+    <script type='text/javascript' src='./public/js/lib/sui/sm-extend.js' charset='utf-8'></script>
+    <script type='text/javascript' src='./public/js/lib/sui/sm-city-picker.js' charset='utf-8'></script>
     <script type='text/javascript' src='./public/js/config.js' charset='utf-8'></script>
     <script type='text/javascript' src='./public/js/lib/mustache/mustache.min.js' charset='utf-8'></script>
     <script type='text/javascript' src='./public/js/base.js' charset='utf-8'></script>
@@ -29,19 +29,57 @@
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
-            <div class="flex-box nav-menu">
-                <div class="flex-box-1"><div class="button  button-round"><div class="flex-box menu-item"><img src="./public/img/a1.jpg" width="40" height="30">加气站</div></div></div>
-                <div class="flex-box-1"><div class="button  button-round"><div class="flex-box menu-item"><img src="./public/img/a1.jpg" width="40" height="30">加油站</div></div></div>
-                <div class="flex-box-1"><div class="button  button-round"><div class="flex-box menu-item"><img src="./public/img/a1.jpg" width="40" height="30">维修站</div></div></div>
+            <div class="buttons-tab fixed-tab menu-nav">
+                <a href="#tab1" class="tab-link active button"><div class=" menu-item"><div class="flex-box"><img src="./public/img/a1.jpg" width="40" height="40">加气站</div></div></a>
+                <a href="#tab2" class="tab-link button"><div class="menu-item"><div class="flex-box"><img src="./public/img/a2.jpg" width="40" height="40">加油站</div></div></a>
+                <a href="#tab3" class="tab-link button"><div class="menu-item"><div class="flex-box"><img src="./public/img/a3.jpg" width="40" height="40">维修站</div></div></a>
             </div>
-            <div class="flex-box">
-                <div>其他商家</div>
+            <div class="flex-box other-business">
+                <div class="other-business-title">其他商家</div>
                 <div class="flex-box-1">
-                    <select name="" id="">
+                    <select name="" id="" class="other-business-choice">
                         <option value="">餐饮店</option>
                         <option value="">住宿站</option>
                         <option value="">加水站</option>
                     </select>
+                </div>
+            </div>
+            <div class="tabs">
+                <div id="tab1" class="tab infinite-scroll active">
+                    <div class="list-block mt0">
+                        <ul class="list-container" id="demo1">
+
+                        </ul>
+                    </div>
+                    <!-- 加载提示符 -->
+                    <div class="infinite-scroll-preloader">
+                        <div class="preloader">
+                        </div>
+                    </div>
+                </div>
+                <div id="tab2" class="tab infinite-scroll">
+                    <div class="list-block mt0">
+                        <ul class="list-container" id="demo2">
+
+                        </ul>
+                    </div>
+                    <!-- 加载提示符 -->
+                    <div class="infinite-scroll-preloader">
+                        <div class="preloader">
+                        </div>
+                    </div>
+                </div>
+                <div id="tab3" class="tab infinite-scroll">
+                    <div class="list-block mt0">
+                        <ul class="list-container" id="demo3">
+
+                        </ul>
+                    </div>
+                    <!-- 加载提示符 -->
+                    <div class="infinite-scroll-preloader">
+                        <div class="preloader">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -63,10 +101,22 @@
         <img src="{{img_url}}" width="44">
     </div>
     <div class="item-inner">
-        <div class="item-title-row">
-            <div class="item-title">{{title}}</div>
+        <div class = "item-title-row">
+            <div class="item-title">
+                <div class="site-name">{{site_name}}</div>
+                <div class="distance">{{distance}}km</div>
+                <div class="evaluation" data-evaluation="{{evaluation}}">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+            </div>
         </div>
-        <div class="item-subtitle">{{sub_title}}</div>
+        <div class="item-subtitle">
+            <div class="navigation button  button-round button-fill button-danger">导航</div>
+        </div>
     </div>
 </li>
 {{/list1}}
@@ -129,63 +179,75 @@
         list1: [
             {
                 img_url:"./public/img/a1.jpg",
-                title:'标题一',
-                sub_title:'子标题一'
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
             },
             {
                 img_url:"./public/img/a1.jpg",
-                title:'标题一',
-                sub_title:'子标题一'
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
             },
             {
                 img_url:"./public/img/a1.jpg",
-                title:'标题一',
-                sub_title:'子标题一'
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
             },
             {
                 img_url:"./public/img/a1.jpg",
-                title:'标题一',
-                sub_title:'子标题一'
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
             },
             {
                 img_url:"./public/img/a1.jpg",
-                title:'标题一',
-                sub_title:'子标题一'
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
             },
             {
                 img_url:"./public/img/a1.jpg",
-                title:'标题一',
-                sub_title:'子标题一'
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
             },
             {
                 img_url:"./public/img/a1.jpg",
-                title:'标题一',
-                sub_title:'子标题一'
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
             },
             {
                 img_url:"./public/img/a1.jpg",
-                title:'标题一',
-                sub_title:'子标题一'
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
             },
             {
                 img_url:"./public/img/a1.jpg",
-                title:'标题一',
-                sub_title:'子标题一'
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
             },
             {
                 img_url:"./public/img/a1.jpg",
-                title:'标题一',
-                sub_title:'子标题一'
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
             },
             {
                 img_url:"./public/img/a1.jpg",
-                title:'标题一',
-                sub_title:'子标题一'
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
             },
             {
                 img_url:"./public/img/a1.jpg",
-                title:'标题一',
-                sub_title:'子标题一'
+                site_name:'张家口加气站',
+                distance:1532,
+                evaluation:'5'
             },
         ],
         list2: [

@@ -4340,11 +4340,11 @@ Device/OS Detection
                 return false;
             }
 
-            if (this.options.ptr && this.y > 44 && this.startY * -1 < $(window).height() && !this.ptrLock) {// jshint ignore:line
+            if (this.options.ptr && this.y > 0 && this.startY * -1 < $(window).height() && !this.ptrLock) {// jshint ignore:line
                 // not trigger ptr when user want to scroll to top
-                y = this.options.ptrOffset || 44;
+                y = this.options.ptrOffset || 0;
                 this._execEvent('ptr');
-                // 防止返回的过程中再次触发了 ptr ，导致被定位到 44px（因为可能done事件触发很快，在返回到44px以前就触发done
+                // 防止返回的过程中再次触发了 ptr ，导致被定位到 0px（因为可能done事件触发很快，在返回到0px以前就触发done
                 this.ptrLock = true;
                 var self = this;
                 setTimeout(function() {
@@ -5822,7 +5822,7 @@ Device/OS Detection
             };
             if (ptr) {
                 options.ptr = true;
-                options.ptrOffset = 44;
+                options.ptrOffset = 0;
             }
             //如果用js滚动条，用transform计算内容区位置，position：fixed将实效。若有.fixed-tab，强制使用native滚动条；备选方案，略粗暴
             // if($(pageContent).find('.fixed-tab').length>0){
@@ -6235,7 +6235,7 @@ Device/OS Detection
 
         function handleScroll() {
             if (container.hasClass('refreshing')) return;
-            if (scroller.scrollTop() * -1 >= 44) {
+            if (scroller.scrollTop() * -1 >= 0) {
                 container.removeClass('pull-down').addClass('pull-up');
             } else {
                 container.removeClass('pull-up').addClass('pull-down');
@@ -6282,7 +6282,7 @@ Device/OS Detection
         if (container.hasClass('refreshing')) return;
         container.addClass('refreshing');
         var scroller = $.getScroller(container);
-        scroller.scrollTop(44 + 1, 200);
+        scroller.scrollTop(0 + 1, 200);
         container.trigger('refresh');
     };
 
@@ -6322,7 +6322,7 @@ Device/OS Detection
         if (container.attr('data-ptr-distance')) {
             dynamicTriggerDistance = true;
         } else {
-            triggerDistance = 44;
+            triggerDistance = 0;
         }
 
         function handleTouchStart(e) {
